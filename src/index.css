@@ -1,7 +1,18 @@
+@font-face {
+  font-family: "gilroy";
+  src: url(../Gilroy-Light.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "gilroy-bold";
+  src: url("../Gilroy-ExtraBold.otf") format("opentype");
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "gilroy-bold";
 }
 
 html,
@@ -11,7 +22,5 @@ body {
 }
 
 body {
-  /* background-color: ; */
+  background-color:#0d013c ;
 }
-
-

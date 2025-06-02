@@ -3,12 +3,18 @@ import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import EditForm from "./editform";
 
-function TodoList({ listItem, handleDelete, handleIsEdit, handlelulu }) {
+function TodoList({
+  listItem,
+  handleDelete,
+  handleIsEdit,
+  handlelulu,
+  handlEnterPress,
+}) {
   const [completed, setCompleted] = useState(false);
   return (
     <li key={listItem.id}>
       {listItem.isEditing ? (
-        <EditForm listItem={listItem} handlelulu={handlelulu} />
+        <EditForm listItem={listItem} handlelulu={handlelulu} handlEnterPress={handlEnterPress} />
       ) : (
         <>
           <p
@@ -18,8 +24,8 @@ function TodoList({ listItem, handleDelete, handleIsEdit, handlelulu }) {
             {listItem.text}
           </p>
           <span className="icon-container">
-            <FaEdit onClick={() => handleIsEdit(listItem.id)} />
-            <MdDelete onClick={() => handleDelete(listItem.id)} />
+            <FaEdit id="editicon" onClick={() => handleIsEdit(listItem.id)} />
+            <MdDelete id="deleteicon" onClick={() => handleDelete(listItem.id)} />
           </span>
         </>
       )}
